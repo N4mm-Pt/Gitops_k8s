@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/<your-org>/<your-repo>
+    repoURL: https://github.com/N4mm-Pt/Gitops_k8s
     targetRevision: HEAD
     path: .
   destination:
