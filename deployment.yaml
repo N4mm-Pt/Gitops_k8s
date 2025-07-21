@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Ably-backend
+  namespace: my-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: Ably-backend
+  template:
+    metadata:
+      labels:
+        app: Ably-backend
+    spec:
+      containers:
+        - name: backend
+          image: <your-ecr-repo-url>:latest
+          ports:
+            - containerPort: 80
+          env:
+            - name: Ably__ApiKey
+              valueFrom:
+                secretKeyRef:
+                  name: ably-api-secret
+                  key: Ably__ApiKey
