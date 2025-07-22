@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: Ably-backend
+  name: ably-backend
   namespace: my-app
 spec:
   selector:
-    app: Ably-backend
+    app: ably-backend
   ports:
     - port: 80
-      targetPort: 80
+      targetPort: 8080

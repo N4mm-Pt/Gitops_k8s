@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Ably-backend
+  name: ably-backend
   namespace: my-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: Ably-backend
+      app: ably-backend
   template:
     metadata:
       labels:
-        app: Ably-backend
+        app: ably-backend
     spec:
       containers:
         - name: backend
-          image: <your-ecr-repo-url>:latest
+          image: 098150418900.dkr.ecr.us-east-1.amazonaws.com/backend-api:latest
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           env:
             - name: Ably__ApiKey
               valueFrom:

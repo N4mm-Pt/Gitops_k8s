@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-app-backend
+  name: Ably-backend
   namespace: argocd
 spec:
   project: default
@@ -11,7 +11,7 @@ spec:
     path: .
   destination:
     server: https://kubernetes.default.svc
-    namespace: my-app
+    namespace: Ably-backend
   syncPolicy:
     automated:
       selfHeal: true
